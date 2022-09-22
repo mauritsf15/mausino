@@ -5,10 +5,10 @@ let theme = "light";
 function changeTheme() {
     if (theme == "light") {
         root.style.setProperty('--colour1', '#EDF6F9')
-        root.style.setProperty('--colour2', '#54c7e3')
-        root.style.setProperty('--colour3', '#545775')
-        root.style.setProperty('--colour4', '#D72638')
-        root.style.setProperty('--colour5', '#D81159')
+        root.style.setProperty('--colour2', '#FF729F')
+        root.style.setProperty('--colour3', '#000022')
+        root.style.setProperty('--colour4', '#725AC1')
+        root.style.setProperty('--colour5', '#FFE74C')
         root.style.setProperty('--colour6', 'rgba(0,0,0,0.4)')
         theme = "dark"
     } else if (theme == "dark") {

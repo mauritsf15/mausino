@@ -59,7 +59,7 @@ body {
 }
 
 header button {
-    background-color: rgba(255,255,255,0.0);
+    background-color: rgba(149, 42, 42, 0);
     border: none;
     color: var(--colour3);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -71,12 +71,13 @@ header .btn {
     height: 50%;
     width: 100%;
     padding-top: 12.5%;
+    border-radius: 15px;
+    transition: ease-in-out 0.3s;
 }
 
 header .btn:hover {
     background-color: var(--colour2);
-    border-radius: 15px;
-    transition:all 0.5s;
+    cursor:pointer;
 }
 
 .homeDiv {
@@ -111,11 +112,11 @@ header .btn:hover {
     background-size: cover;
     background-position: center;
     background-image: url('/img/towers.png');
+    transition: ease-in-out 0.2s;
 }
 
 .towersImg:hover {
-    transform: scale(0.9);
-    transition: all 0.5s;
+    transform: scale(0.95);
 }
 
 .rouletteImg {
@@ -123,11 +124,11 @@ header .btn:hover {
     background-size: cover;
     background-position: center;
     background-image: url('/img/roulette.png');
+    transition: ease-in-out 0.2s;
 }
 
 .rouletteImg:hover {
-    transform: scale(0.9);
-    transition: all 0.5s;
+    transform: scale(0.95);
 }
 
 .minesImg {
@@ -135,9 +136,39 @@ header .btn:hover {
     background-size:cover;
     background-position: center;
     background-image: url('/img/mines.png');
+    transition: ease-in-out 0.2s;
 }
 
 .minesImg:hover {
-    transform: scale(0.9);
-    transition: all 0.5s;
+    transform: scale(0.95);
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.towerWrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(500px, auto);
+}
+
+.towerWrapper div {
+    background-color: var(--colour2);
+    border-radius: 15px;
+}
+
+.towerWrapper .towerSettings {
+    grid-column: 2 / 4;
+    grid-row: 1;
+}
+
+.towerWrapper .towerGame {
+    grid-column: 4 / 7;
+    grid-row: 1;
+}
+
+input {
+    font-size: 12pt;
 }
