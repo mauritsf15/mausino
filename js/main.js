@@ -3,10 +3,11 @@ let betAmount;
 // COOKIES! nom nom
 
 function getBank() {
-    if (document.cookie) {
-        let startFrom = 5
+    if (document.cookie.includes('bank')) {
+        let startFrom = document.cookie.search("bank") + 5
         let localBank = ""
         while (startFrom < document.cookie.length) {
+            console.log(document.cookie[startFrom])
             if (document.cookie[startFrom] == ";") {
                 startFrom = 9999999
             } else {
