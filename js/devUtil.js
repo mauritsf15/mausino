@@ -1,1 +1,1 @@
-/*goToTowers()*/
+goToTowers()

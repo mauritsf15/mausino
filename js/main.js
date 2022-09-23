@@ -1,3 +1,6 @@
+let bank = 100
+let betAmount;
+
 const btnHome = document.querySelector('.btnHome');
 const btnTowers = document.querySelector('.btnTowers')
 const btnRoulette = document.querySelector('.btnRoulette');
