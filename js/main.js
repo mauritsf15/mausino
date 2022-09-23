@@ -55,3 +55,8 @@ function goToMines() {
     rouletteDiv.style.display = "none"
     minesDiv.style.display = "grid"
 }
+
+function updateBank() {
+    document.querySelector(".bank").innerHTML = `$${bank}`
+    input.max = bank
+}

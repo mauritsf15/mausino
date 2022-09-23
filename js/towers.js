@@ -105,6 +105,11 @@ function startTowers() {
     if (gameRow == null && document.querySelector(".betAmount").reportValidity()) {
         gameRow = "One"
         betAmount = parseInt(document.querySelector('.betAmount').value)
+        bank -= betAmount
+        updateBank()
+        input.disabled = true
+        easyBtn.disabled = true
+        hardBtn.disabled = true
         let localWhileNo = 1
         while (localWhileNo < 4) {
             const localBtn = document.querySelector(`.rowOne .btn${localWhileNo}`)
@@ -135,6 +140,7 @@ function startTowers() {
                 bank += betAmount * 8
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 8}!`
             }
+            resetTowers()
         } else if (gamemode == "hard") {
             if (gameRow == "Two") {
                 bank += betAmount * 2.8
@@ -155,6 +161,7 @@ function startTowers() {
                 bank += betAmount * 510.3
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 510.3}!`
             }
+            resetTowers()
         }
     }
         
@@ -170,8 +177,6 @@ function towerButton(element=text) {
                 if (chosenBtn == element.target.className) {
                     element.target.style.backgroundColor = 'red'
                     document.querySelector('.towerMsgs').innerHTML = "YOU LOST!"
-                    gameRow = null
-                    document.querySelector('.towersStartBtn').innerHTML = "Start game!"
                     resetTowers()
                 } else {
                     element.target.style.backgroundColor = 'green'
@@ -190,7 +195,7 @@ function towerButton(element=text) {
                     } else if (gameRow == "Seven") {
                         bank += betAmount * 11.1
                         document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 11.1}!`
-                        gameRow = null
+                        resetTowers()
                     }
                     if (gameRow) {
                         let localWhileNo = 1
@@ -205,8 +210,6 @@ function towerButton(element=text) {
                 if (chosenBtn != element.target.className) {
                     element.target.style.backgroundColor = 'red'
                     document.querySelector('.towerMsgs').innerHTML = "YOU LOST!"
-                    gameRow = null
-                    document.querySelector('.towersStartBtn').innerHTML = "Start game!"
                     resetTowers()
                 } else {
                     element.target.style.backgroundColor = 'green'
@@ -225,7 +228,6 @@ function towerButton(element=text) {
                     } else if (gameRow == "Seven") {
                         bank += betAmount * 1421.5
                         document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 1421.5}!`
-                        gameRow = null
                     }
                     let localWhileNo = 1
                     while (localWhileNo < 4) {
@@ -251,4 +253,10 @@ function resetTowers() {
         btn3s[localWhileNo].style.backgroundColor = '#cacaca'
         localWhileNo += 1
     }
+    document.querySelector('.towersStartBtn').innerHTML = "Start game!"
+    gameRow = null
+    updateBank()
+    input.disabled = false
+    easyBtn.disabled = false
+    hardBtn.disabled = false
 }
