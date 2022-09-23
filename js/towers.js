@@ -14,13 +14,7 @@ while (whileNo < 7) {
     let localBtnVar3 = btn3s[whileNo].addEventListener('click', towerButton);
     whileNo += 1;
 }
-
-// How did I do this?
-// I went into console and used console.log(element) and found the element values!
-
-function towerButton(element=text) {
-    console.log(element.explicitOriginalTarget.parentElement.className) // finds the parent class
-}
+// towerButton function is in line 113
 
 document.querySelector('.betAmount').value = 10 // Starting amount
 
@@ -30,7 +24,7 @@ if (input) {
     input.addEventListener('change', updateTowers)
 }
 
-// Defining game mode as easy + creating buttons that work
+// Defining game mode as easy + creating gamemode buttons that work
 let gamemode = "easy"
 
 const easyBtn = document.querySelector('.easy')
@@ -94,5 +88,34 @@ function updateTowers() {
         document.querySelector('.rowSeven .btn1').innerHTML = `$${Math.round(input.value * 1421.5)}`
         document.querySelector('.rowSeven .btn2').innerHTML = `$${Math.round(input.value * 1421.5)}`
         document.querySelector('.rowSeven .btn3').innerHTML = `$${Math.round(input.value * 1421.5)}`
+    }
+}
+
+// START GAME
+
+const startBtn = document.querySelector('.towersStartBtn')
+
+if (startBtn) {
+    startBtn.addEventListener('click', startTowers)
+}
+
+let gameRow = "One"
+
+function startTowers() {
+    let localWhileNo = 1
+    while (localWhileNo < 4) {
+        const localBtn = document.querySelector(`.rowOne .btn${localWhileNo}`)
+        localBtn.style.backgroundColor = "var(--colour4)"
+        localWhileNo += 1
+    }
+}
+
+// Finds parent class on button click so it knows what row it's on
+
+function towerButton(element=text) {
+    if (`row${gameRow}` == element.target.parentElement.className) {
+        alert('ok')
+    } else {
+        // do nothing
     }
 }

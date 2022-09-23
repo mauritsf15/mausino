@@ -277,3 +277,13 @@ input {
     margin-left: 10px;
 }
 
+.towerGame button {
+    border: none;
+    border-radius: 7px;
+    transition: 0.2s ease-in-out;
+}
+
+.towerGame button:hover {
+    cursor: pointer;
+    transform:scale(1.05)
+}
