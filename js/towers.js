@@ -105,8 +105,7 @@ function startTowers() {
     if (gameRow == null && document.querySelector(".betAmount").reportValidity()) {
         gameRow = "One"
         betAmount = parseInt(document.querySelector('.betAmount').value)
-        bank -= betAmount
-        updateBank()
+        remBank(amount=`${betAmount}`)
         input.disabled = true
         easyBtn.disabled = true
         hardBtn.disabled = true
@@ -122,43 +121,43 @@ function startTowers() {
     } else {
         if (gamemode == "easy") {
             if (gameRow == "Two") {
-                bank += betAmount * 1.4
+                addBank(amount=`${betAmount * 1.4}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 1.4}!`
             } else if (gameRow == "Three") {
-                bank += betAmount * 2
+                addBank(amount=`${betAmount * 2}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 2}!`
             } else if (gameRow == "Four") {
-                bank += betAmount * 2.8
+                addBank(amount=`${betAmount * 2.8}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 2.8}!`
             } else if (gameRow == "Five") {
-                bank += betAmount * 4
+                addBank(amount=`${betAmount * 4}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 4}!`
             } else if (gameRow == "Six") {
-                bank += betAmount * 5.6
+                addBank(amount=`${betAmount * 5.6}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 5.6}!`
             } else if (gameRow == "Seven") {
-                bank += betAmount * 8
+                addBank(amount=`${betAmount * 8}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 8}!`
             }
             resetTowers()
         } else if (gamemode == "hard") {
             if (gameRow == "Two") {
-                bank += betAmount * 2.8
+                addBank(amount=`${betAmount * 2.8}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 2.8}!`
             } else if (gameRow == "Three") {
-                bank += betAmount * 8.1
+                addBank(amount=`${betAmount * 8.1}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 8.1}!`
             } else if (gameRow == "Four") {
-                bank += betAmount * 22.9
+                addBank(amount=`${betAmount * 22.9}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 22.9}!`
             } else if (gameRow == "Five") {
-                bank += betAmount * 64.8
+                addBank(amount=`${betAmount * 64.8}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 64.8}!`
             } else if (gameRow == "Six") {
-                bank += betAmount * 182.2
+                addBank(amount=`${betAmount * 182.2}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 182.2}!`
             } else if (gameRow == "Seven") {
-                bank += betAmount * 510.3
+                addBank(amount=`${betAmount * 510.3}`)
                 document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 510.3}!`
             }
             resetTowers()
@@ -193,7 +192,7 @@ function towerButton(element=text) {
                     } else if (gameRow == "Six") {
                         gameRow = "Seven"
                     } else if (gameRow == "Seven") {
-                        bank += betAmount * 11.1
+                        addBank(amount=`${betAmount * 11.1}`)
                         document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 11.1}!`
                         resetTowers()
                     }
@@ -226,7 +225,7 @@ function towerButton(element=text) {
                     } else if (gameRow == "Six") {
                         gameRow = "Seven"
                     } else if (gameRow == "Seven") {
-                        bank += betAmount * 1421.5
+                        addBank(amount=`${betAmount * 1421.5}`)
                         document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 1421.5}!`
                     }
                     let localWhileNo = 1

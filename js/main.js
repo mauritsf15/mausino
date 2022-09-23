@@ -1,5 +1,37 @@
-let bank = 100
 let betAmount;
+
+// COOKIES! nom nom
+
+function getBank() {
+    if (document.cookie) {
+        let startFrom = 5
+        let localBank = ""
+        while (startFrom < document.cookie.length) {
+            localBank += document.cookie[startFrom]
+            startFrom += 1
+        }
+        return localBank
+    } else {
+        document.cookie = "bank=100; SameSite=Lax"
+        document.querySelector(".bank").innerHTML = `$100`
+    }
+}
+
+function addBank(amount=text) {
+    let localBank = parseInt(getBank())
+    localBank += parseInt(amount)
+    document.cookie = `bank=${localBank}; SameSite=Lax`
+    updateBank()
+}
+
+function remBank(amount=text) {
+    let localBank = parseInt(getBank())
+    localBank -= parseInt(amount)
+    document.cookie = `bank=${localBank}; SameSite=Lax`
+    updateBank()
+}
+
+updateBank()
 
 const btnHome = document.querySelector('.btnHome');
 const btnTowers = document.querySelector('.btnTowers')
@@ -57,6 +89,6 @@ function goToMines() {
 }
 
 function updateBank() {
-    document.querySelector(".bank").innerHTML = `$${bank}`
-    input.max = bank
+    document.querySelector(".bank").innerHTML = `$${getBank()}`
+    input.max = getBank()
 }
