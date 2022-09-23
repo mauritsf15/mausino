@@ -7,8 +7,12 @@ function getBank() {
         let startFrom = 5
         let localBank = ""
         while (startFrom < document.cookie.length) {
-            localBank += document.cookie[startFrom]
-            startFrom += 1
+            if (document.cookie[startFrom] == ";") {
+                startFrom = 9999999
+            } else {
+                localBank += document.cookie[startFrom]
+                startFrom += 1
+            }
         }
         return localBank
     } else {
