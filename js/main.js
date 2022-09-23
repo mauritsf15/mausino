@@ -13,7 +13,7 @@ function getBank() {
         return localBank
     } else {
         document.cookie = "bank=100; SameSite=Lax"
-        document.querySelector(".bank").innerHTML = `$100`
+        updateBank()
     }
 }
 
@@ -92,3 +92,5 @@ function updateBank() {
     document.querySelector(".bank").innerHTML = `$${getBank()}`
     input.max = getBank()
 }
+
+updateBank()

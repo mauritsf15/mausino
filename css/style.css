@@ -211,10 +211,6 @@ input {
     cursor: pointer;
 }
 
-/*.towerGame div {
-    background-color: var(--colour6);
-}*/
-
 .towersGameTitle {
     grid-column: 3 / 6;
     grid-row: 1;

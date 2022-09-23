@@ -4,6 +4,9 @@ const devAddBank = document.querySelector('.bank')
 
 if (devAddBank) {
     devAddBank.addEventListener('click', function() {
-        addBank(amount=prompt("How much would you like to add?", "50"))
+        localAmount = prompt("How much would you like to add?", "50")
+        if (localAmount != NaN) {
+            addBank(amount=localAmount)
+        }
     })
 }
