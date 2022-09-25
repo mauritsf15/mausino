@@ -1,13 +1,19 @@
 let betAmount;
 
-// COOKIES! nom nom
-
+// (fake) COOKIES! nom nom
+function getBank() {
+    if (localStorage.getItem("bank")) {
+        return localStorage.getItem("bank")
+    } else {
+        localStorage.setItem("bank", "100")
+    }
+}
+/*
 function getBank() {
     if (document.cookie.includes('bank')) {
         let startFrom = document.cookie.search("bank") + 5
         let localBank = ""
         while (startFrom < document.cookie.length) {
-            console.log(document.cookie[startFrom])
             if (document.cookie[startFrom] == ";") {
                 startFrom = 9999999
             } else {
@@ -17,22 +23,24 @@ function getBank() {
         }
         return localBank
     } else {
-        document.cookie = "bank=100; SameSite=Lax"
+        //
+        let newDate = new Date(Date.now() + 3153600000).toUTCString()
+        document.cookie = `bank=100; SameSite=Strict; expires=${newDate}`
         updateBank()
     }
-}
+}*/
 
 function addBank(amount=text) {
     let localBank = parseInt(getBank())
     localBank += parseInt(amount)
-    document.cookie = `bank=${localBank}; SameSite=Lax`
+    localStorage.setItem("bank", localBank)
     updateBank()
 }
 
 function remBank(amount=text) {
     let localBank = parseInt(getBank())
     localBank -= parseInt(amount)
-    document.cookie = `bank=${localBank}; SameSite=Lax`
+    localStorage.setItem("bank", localBank)
     updateBank()
 }
 
