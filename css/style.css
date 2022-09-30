@@ -67,7 +67,6 @@ header button {
 }
 
 header .btn {
-    cursor: crosshair;
     height: 50%;
     width: 100%;
     padding-top: 12.5%;
@@ -283,4 +282,62 @@ input {
 .towerGame button:hover {
     cursor: pointer;
     transform:scale(1.05)
+}
+
+.rouletteWrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(500px, auto);
+}
+
+.rouletteWrapper div {
+    background-color: var(--colour2);
+    border-radius: 15px;
+}
+
+.rouletteSettings {
+    grid-column: 2 / 4;
+}
+
+.rouletteGame {
+    grid-column: 4 / 7;
+}
+
+.rouletteBoard {
+    transition: 5s ease-in-out;
+    width: 65%;
+}
+
+.rouletteSettings .btn {
+    width: 20%;
+    height: 25px;
+    background-color: var(--colour4);
+    border: none;
+    border-radius: 5px;
+    color: var(--colour3);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: ease-in-out 0.2s;
+}
+
+.rouletteSettings .btn:hover {
+    background-color: var(--colour6);
+    cursor: pointer;
+}
+
+.rouletteStartBtn {
+    width: 60%;
+    height: 40px;
+    font-size: 12pt;
+    background-color: var(--colour5);
+    border: none;
+    border-radius: 15px;
+    color: var(--colour3);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: ease-in-out 0.2s;
+}
+
+.rouletteStartBtn:hover {
+    transform: scale(1.3);
+    cursor: pointer;
 }

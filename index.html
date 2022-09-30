@@ -81,7 +81,21 @@
         </div>
     </div>
     <div class="rouletteDiv">
-        <h1>Roulette!</h1>
+        <div class="rouletteWrapper">
+            <div class="rouletteSettings">
+                <br><h2>Settings</h2>
+                <br>
+                <input type="number" name="betAmount" class="betAmount" placeholder="Bet Amount" min="5" max="100" required><br><br>
+                <p>Colour</p>
+                <button class="btn red">Red</button>&nbsp;<button class="btn black">Black</button>&nbsp;<button class="btn green">Green</button><br><br><br>
+                <button class="rouletteStartBtn">Start roulette!</button>
+            </div>
+            <div class="rouletteGame">
+                <br>
+                <img class="rouletteBoard" src="img/rouletteboard.png" alt="">
+                <h2 class="rouletteMsgs">&nbsp;</h2>
+            </div>
+        </div>
     </div>
     <div class="minesDiv">
         <h1>Mines!</h1>
@@ -90,5 +104,6 @@
     <script src="js/main.js"></script>
     <script src="js/changeTheme.js"></script>
     <script src="js/devUtil.js"></script>
+    <script src="js/roulette.js"></script>
 </body>
 </html>

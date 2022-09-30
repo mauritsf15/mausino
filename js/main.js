@@ -8,27 +8,6 @@ function getBank() {
         localStorage.setItem("bank", "100")
     }
 }
-/*
-function getBank() {
-    if (document.cookie.includes('bank')) {
-        let startFrom = document.cookie.search("bank") + 5
-        let localBank = ""
-        while (startFrom < document.cookie.length) {
-            if (document.cookie[startFrom] == ";") {
-                startFrom = 9999999
-            } else {
-                localBank += document.cookie[startFrom]
-                startFrom += 1
-            }
-        }
-        return localBank
-    } else {
-        //
-        let newDate = new Date(Date.now() + 3153600000).toUTCString()
-        document.cookie = `bank=100; SameSite=Strict; expires=${newDate}`
-        updateBank()
-    }
-}*/
 
 function addBank(amount=text) {
     let localBank = parseInt(getBank())
