@@ -17,6 +17,7 @@ if (rouletteStartBtn) {
     blackBtn.addEventListener('click', function() {colorBtn("black")})
     greenBtn.addEventListener('click', function() {colorBtn("green")})
     rouletteBoard.addEventListener('transitionend', doneSpinning)
+    updateInput()
 }
 
 // Start button
@@ -37,10 +38,12 @@ function rouletteStart() {
     } else {
         rouletteAlert("You must choose a colour first!") 
     }
+    updateInput()
 }
 
 function rotateBoard(degree) {
     rouletteBoard.style.transform = `rotate(${degree}deg)`
+    updateInput()
 }
 
 // Choose the colour you're betting on
@@ -49,6 +52,7 @@ function colorBtn(color) {
     const rouletteBg = document.querySelector('.rouletteGame')
     rouletteBg.style.backgroundColor = color
     rouletteColor = color
+    updateInput()
 }
 
 // Function to show messages under roulette board
@@ -59,6 +63,7 @@ function rouletteAlert(alert) {
     } else {
         document.querySelector('.rouletteMsgs').innerHTML = alert
     }
+    updateInput()
 }
 
 function doneSpinning() {
@@ -94,4 +99,9 @@ function doneSpinning() {
             rouletteAlert("You lost...")
         }
     }
+    updateInput()
+}
+
+function updateInput() {
+    rouletteInput.max = getBank()
 }
