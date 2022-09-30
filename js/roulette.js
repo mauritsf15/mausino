@@ -22,7 +22,9 @@ if (rouletteStartBtn) {
 // Start button
 
 function rouletteStart() {
-    if (rouletteColor) {
+    if (rouletteColor && document.querySelector(".rouletteSettings .betAmount").reportValidity()) {
+        betAmount = parseInt(document.querySelector('.rouletteSettings .betAmount').value)
+        remBank(amount=`${betAmount}`)
         rouletteAlert("clear")
         degree = Math.round(Math.random() * 3600)
         rotateBoard(degree)
@@ -33,7 +35,7 @@ function rouletteStart() {
         greenBtn.disabled = true
         rouletteStartBtn.disabled = true
     } else {
-        rouletteAlert("You must choose a colour first!")
+        rouletteAlert("You must choose a colour first!") 
     }
 }
 
@@ -69,19 +71,25 @@ function doneSpinning() {
     const floor = Math.floor((degree % 360 + 4.864864865) / 9.72972973)
     if (floor == 0) {
         if (rouletteColor == "green") {
-            rouletteAlert("You WON!")
+            let win = betAmount * 34
+            rouletteAlert(`HUGE WIN: $${win}`)
+            addBank(amount=win)
         } else {
             rouletteAlert("You lost...")
         }
     } else if (floor % 2 == 0) {
         if (rouletteColor == "red") {
-            rouletteAlert("You WON!")
+            let win = betAmount * 2
+            rouletteAlert(`You won $${win}!`)
+            addBank(amount=win)
         } else {
             rouletteAlert("You lost...")
         }
     } else {
         if (rouletteColor == "black") {
-            rouletteAlert("You WON!")
+            let win = betAmount * 2
+            rouletteAlert(`You won $${win}!`)
+            addBank(amount=win)
         } else {
             rouletteAlert("You lost...")
         }
