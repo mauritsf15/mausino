@@ -10,5 +10,3 @@ if (devAddBank) {
         }
     })
 }
-
-goToRoulette()
