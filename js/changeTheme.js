@@ -22,6 +22,6 @@ function changeTheme() {
     }
 }
 
-const changeThemeBtn = document.querySelector('.changeThemeBtn')
+const changeThemeBtn = qs('changeThemeBtn')
 
 changeThemeBtn.addEventListener('click', changeTheme)

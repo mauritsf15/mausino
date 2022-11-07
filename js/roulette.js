@@ -1,11 +1,11 @@
 // ROULETTE!
 
-const rouletteStartBtn = document.querySelector('.rouletteStartBtn')
-const rouletteBoard = document.querySelector('.rouletteBoard')
-const redBtn = document.querySelector('.red')
-const blackBtn = document.querySelector('.black')
-const greenBtn = document.querySelector('.green')
-const rouletteInput = document.querySelector('.rouletteSettings .betAmount')
+const rouletteStartBtn = qs('rouletteStartBtn')
+const rouletteBoard = qs('rouletteBoard')
+const redBtn = qs('red')
+const blackBtn = qs('black')
+const greenBtn = qs('green')
+const rouletteInput = qs('rouletteSettings .betAmount')
 let rouletteColor;
 let degree;
 
@@ -24,7 +24,7 @@ if (rouletteStartBtn) {
 
 function rouletteStart() {
     if (rouletteColor && document.querySelector(".rouletteSettings .betAmount").reportValidity()) {
-        betAmount = parseInt(document.querySelector('.rouletteSettings .betAmount').value)
+        betAmount = parseInt(qs('rouletteSettings .betAmount').value)
         remBank(amount=`${betAmount}`)
         rouletteAlert("clear")
         degree = Math.round(Math.random() * 3600)
@@ -49,7 +49,7 @@ function rotateBoard(degree) {
 // Choose the colour you're betting on
 
 function colorBtn(color) {
-    const rouletteBg = document.querySelector('.rouletteGame')
+    const rouletteBg = qs('rouletteGame')
     rouletteBg.style.backgroundColor = color
     rouletteColor = color
     updateInput()
@@ -59,9 +59,9 @@ function colorBtn(color) {
 
 function rouletteAlert(alert) {
     if (alert == "clear") {
-        document.querySelector('.rouletteMsgs').innerHTML = "&nbsp;"
+        qs('rouletteMsgs').innerHTML = "&nbsp;"
     } else {
-        document.querySelector('.rouletteMsgs').innerHTML = alert
+        qs('rouletteMsgs').innerHTML = alert
     }
     updateInput()
 }

@@ -1,6 +1,6 @@
 // nothing
 
-const devAddBank = document.querySelector('.bank')
+const devAddBank = qs('bank')
 
 if (devAddBank) {
     devAddBank.addEventListener('click', function() {
@@ -10,3 +10,5 @@ if (devAddBank) {
         }
     })
 }
+
+goToMines()

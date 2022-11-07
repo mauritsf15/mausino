@@ -341,3 +341,80 @@ input {
     transform: scale(1.3);
     cursor: pointer;
 }
+
+.minesSettings .btn {
+    width: 20%;
+    height: 25px;
+    background-color: var(--colour4);
+    border: none;
+    border-radius: 5px;
+    color: var(--colour3);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: ease-in-out 0.2s;
+}
+
+.minesSettings .btn:hover {
+    background-color: var(--colour6);
+    cursor: pointer;
+}
+
+.minesStartBtn {
+    width: 60%;
+    height: 40px;
+    font-size: 12pt;
+    background-color: var(--colour5);
+    border: none;
+    border-radius: 15px;
+    color: var(--colour3);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: ease-in-out 0.2s;
+}
+
+.minesStartBtn:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.minesWrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(500px, auto);
+}
+
+.minesWrapper div {
+    background-color: var(--colour2);
+    border-radius: 15px;
+}
+
+.minesSettings {
+    grid-column: 2 / 4;
+}
+
+.minesGame {
+    grid-column: 4 / 7;
+}
+
+.minesWrapper .minesGame .minesGameWrapper {
+    width: 350px;
+    height: 400px;
+    margin: auto;
+}
+
+.minesGameWrapper article {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    border-radius: 10px;
+    float: left;
+    background-color: #cacaca;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.minesGameWrapper article:hover {
+    transform: scale(1.1)
+}
+
+.minesGameWrapper footer {
+    clear:both
+}

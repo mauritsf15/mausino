@@ -8,6 +8,10 @@ let whileNo = 0; // Number to use with the while loop
 
 // adding an eventlistener which uses the element when clicked on it
 
+function qs(classname) {
+    return document.querySelector(`.${classname}`)
+}
+
 while (whileNo < 7) {
     let localBtnVar1 = btn1s[whileNo].addEventListener('click', towerButton);
     let localBtnVar2 = btn2s[whileNo].addEventListener('click', towerButton);
@@ -16,9 +20,9 @@ while (whileNo < 7) {
 }
 // towerButton function is in line 113
 
-document.querySelector('.betAmount').value = 10 // Starting amount
+qs('betAmount').value = 10 // Starting amount
 
-const input = document.querySelector('.betAmount')
+const input = qs('betAmount')
 
 if (input) {
     input.addEventListener('change', updateTowers)
@@ -27,8 +31,8 @@ if (input) {
 // Defining game mode as easy + creating gamemode buttons that work
 let gamemode = "easy"
 
-const easyBtn = document.querySelector('.easy')
-const hardBtn = document.querySelector('.hard')
+const easyBtn = qs('easy')
+const hardBtn = qs('hard')
 
 if (easyBtn && hardBtn) {
     easyBtn.addEventListener('click', function() {
@@ -45,55 +49,55 @@ updateTowers()
 
 function updateTowers() {
     if (gamemode == "easy") {
-        document.querySelector('.rowOne .btn1').innerHTML = `$${Math.round(input.value * 1.4)}`
-        document.querySelector('.rowOne .btn2').innerHTML = `$${Math.round(input.value * 1.4)}`
-        document.querySelector('.rowOne .btn3').innerHTML = `$${Math.round(input.value * 1.4)}`
-        document.querySelector('.rowTwo .btn1').innerHTML = `$${Math.round(input.value * 2)}`
-        document.querySelector('.rowTwo .btn2').innerHTML = `$${Math.round(input.value * 2)}`
-        document.querySelector('.rowTwo .btn3').innerHTML = `$${Math.round(input.value * 2)}`
-        document.querySelector('.rowThree .btn1').innerHTML = `$${Math.round(input.value * 2.8)}`
-        document.querySelector('.rowThree .btn2').innerHTML = `$${Math.round(input.value * 2.8)}`
-        document.querySelector('.rowThree .btn3').innerHTML = `$${Math.round(input.value * 2.8)}`
-        document.querySelector('.rowFour .btn1').innerHTML = `$${Math.round(input.value * 4)}`
-        document.querySelector('.rowFour .btn2').innerHTML = `$${Math.round(input.value * 4)}`
-        document.querySelector('.rowFour .btn3').innerHTML = `$${Math.round(input.value * 4)}`
-        document.querySelector('.rowFive .btn1').innerHTML = `$${Math.round(input.value * 5.6)}`
-        document.querySelector('.rowFive .btn2').innerHTML = `$${Math.round(input.value * 5.6)}`
-        document.querySelector('.rowFive .btn3').innerHTML = `$${Math.round(input.value * 5.6)}`
-        document.querySelector('.rowSix .btn1').innerHTML = `$${Math.round(input.value * 8)}`
-        document.querySelector('.rowSix .btn2').innerHTML = `$${Math.round(input.value * 8)}`
-        document.querySelector('.rowSix .btn3').innerHTML = `$${Math.round(input.value * 8)}`
-        document.querySelector('.rowSeven .btn1').innerHTML = `$${Math.round(input.value * 11.1)}`
-        document.querySelector('.rowSeven .btn2').innerHTML = `$${Math.round(input.value * 11.1)}`
-        document.querySelector('.rowSeven .btn3').innerHTML = `$${Math.round(input.value * 11.1)}`
+        qs('rowOne .btn1').innerHTML = `$${Math.round(input.value * 1.4)}`
+        qs('rowOne .btn2').innerHTML = `$${Math.round(input.value * 1.4)}`
+        qs('rowOne .btn3').innerHTML = `$${Math.round(input.value * 1.4)}`
+        qs('rowTwo .btn1').innerHTML = `$${Math.round(input.value * 2)}`
+        qs('rowTwo .btn2').innerHTML = `$${Math.round(input.value * 2)}`
+        qs('rowTwo .btn3').innerHTML = `$${Math.round(input.value * 2)}`
+        qs('rowThree .btn1').innerHTML = `$${Math.round(input.value * 2.8)}`
+        qs('rowThree .btn2').innerHTML = `$${Math.round(input.value * 2.8)}`
+        qs('rowThree .btn3').innerHTML = `$${Math.round(input.value * 2.8)}`
+        qs('rowFour .btn1').innerHTML = `$${Math.round(input.value * 4)}`
+        qs('rowFour .btn2').innerHTML = `$${Math.round(input.value * 4)}`
+        qs('rowFour .btn3').innerHTML = `$${Math.round(input.value * 4)}`
+        qs('rowFive .btn1').innerHTML = `$${Math.round(input.value * 5.6)}`
+        qs('rowFive .btn2').innerHTML = `$${Math.round(input.value * 5.6)}`
+        qs('rowFive .btn3').innerHTML = `$${Math.round(input.value * 5.6)}`
+        qs('rowSix .btn1').innerHTML = `$${Math.round(input.value * 8)}`
+        qs('rowSix .btn2').innerHTML = `$${Math.round(input.value * 8)}`
+        qs('rowSix .btn3').innerHTML = `$${Math.round(input.value * 8)}`
+        qs('rowSeven .btn1').innerHTML = `$${Math.round(input.value * 11.1)}`
+        qs('rowSeven .btn2').innerHTML = `$${Math.round(input.value * 11.1)}`
+        qs('rowSeven .btn3').innerHTML = `$${Math.round(input.value * 11.1)}`
     } else {
-        document.querySelector('.rowOne .btn1').innerHTML = `$${Math.round(input.value * 2.8)}`
-        document.querySelector('.rowOne .btn2').innerHTML = `$${Math.round(input.value * 2.8)}`
-        document.querySelector('.rowOne .btn3').innerHTML = `$${Math.round(input.value * 2.8)}`
-        document.querySelector('.rowTwo .btn1').innerHTML = `$${Math.round(input.value * 8.1)}`
-        document.querySelector('.rowTwo .btn2').innerHTML = `$${Math.round(input.value * 8.1)}`
-        document.querySelector('.rowTwo .btn3').innerHTML = `$${Math.round(input.value * 8.1)}`
-        document.querySelector('.rowThree .btn1').innerHTML = `$${Math.round(input.value * 22.9)}`
-        document.querySelector('.rowThree .btn2').innerHTML = `$${Math.round(input.value * 22.9)}`
-        document.querySelector('.rowThree .btn3').innerHTML = `$${Math.round(input.value * 22.9)}`
-        document.querySelector('.rowFour .btn1').innerHTML = `$${Math.round(input.value * 64.8)}`
-        document.querySelector('.rowFour .btn2').innerHTML = `$${Math.round(input.value * 64.8)}`
-        document.querySelector('.rowFour .btn3').innerHTML = `$${Math.round(input.value * 64.8)}`
-        document.querySelector('.rowFive .btn1').innerHTML = `$${Math.round(input.value * 182.2)}`
-        document.querySelector('.rowFive .btn2').innerHTML = `$${Math.round(input.value * 182.2)}`
-        document.querySelector('.rowFive .btn3').innerHTML = `$${Math.round(input.value * 182.2)}`
-        document.querySelector('.rowSix .btn1').innerHTML = `$${Math.round(input.value * 510.3)}`
-        document.querySelector('.rowSix .btn2').innerHTML = `$${Math.round(input.value * 510.3)}`
-        document.querySelector('.rowSix .btn3').innerHTML = `$${Math.round(input.value * 510.3)}`
-        document.querySelector('.rowSeven .btn1').innerHTML = `$${Math.round(input.value * 1421.5)}`
-        document.querySelector('.rowSeven .btn2').innerHTML = `$${Math.round(input.value * 1421.5)}`
-        document.querySelector('.rowSeven .btn3').innerHTML = `$${Math.round(input.value * 1421.5)}`
+        qs('rowOne .btn1').innerHTML = `$${Math.round(input.value * 2.8)}`
+        qs('rowOne .btn2').innerHTML = `$${Math.round(input.value * 2.8)}`
+        qs('rowOne .btn3').innerHTML = `$${Math.round(input.value * 2.8)}`
+        qs('rowTwo .btn1').innerHTML = `$${Math.round(input.value * 8.1)}`
+        qs('rowTwo .btn2').innerHTML = `$${Math.round(input.value * 8.1)}`
+        qs('rowTwo .btn3').innerHTML = `$${Math.round(input.value * 8.1)}`
+        qs('rowThree .btn1').innerHTML = `$${Math.round(input.value * 22.9)}`
+        qs('rowThree .btn2').innerHTML = `$${Math.round(input.value * 22.9)}`
+        qs('rowThree .btn3').innerHTML = `$${Math.round(input.value * 22.9)}`
+        qs('rowFour .btn1').innerHTML = `$${Math.round(input.value * 64.8)}`
+        qs('rowFour .btn2').innerHTML = `$${Math.round(input.value * 64.8)}`
+        qs('rowFour .btn3').innerHTML = `$${Math.round(input.value * 64.8)}`
+        qs('rowFive .btn1').innerHTML = `$${Math.round(input.value * 182.2)}`
+        qs('rowFive .btn2').innerHTML = `$${Math.round(input.value * 182.2)}`
+        qs('rowFive .btn3').innerHTML = `$${Math.round(input.value * 182.2)}`
+        qs('rowSix .btn1').innerHTML = `$${Math.round(input.value * 510.3)}`
+        qs('rowSix .btn2').innerHTML = `$${Math.round(input.value * 510.3)}`
+        qs('rowSix .btn3').innerHTML = `$${Math.round(input.value * 510.3)}`
+        qs('rowSeven .btn1').innerHTML = `$${Math.round(input.value * 1421.5)}`
+        qs('rowSeven .btn2').innerHTML = `$${Math.round(input.value * 1421.5)}`
+        qs('rowSeven .btn3').innerHTML = `$${Math.round(input.value * 1421.5)}`
     }
 }
 
 // START GAME
 
-const startBtn = document.querySelector('.towersStartBtn')
+const startBtn = qs('towersStartBtn')
 
 if (startBtn) {
     startBtn.addEventListener('click', startTowers)
@@ -104,7 +108,7 @@ let gameRow = null
 function startTowers() {
     if (gameRow == null && document.querySelector(".betAmount").reportValidity()) {
         gameRow = "One"
-        betAmount = parseInt(document.querySelector('.betAmount').value)
+        betAmount = parseInt(qs('betAmount').value)
         remBank(amount=`${betAmount}`)
         input.disabled = true
         easyBtn.disabled = true
@@ -115,50 +119,50 @@ function startTowers() {
             localBtn.style.backgroundColor = "var(--colour4)"
             localWhileNo += 1
         }
-        document.querySelector('.towersStartBtn').innerHTML = "CASHOUT"
+        qs('towersStartBtn').innerHTML = "CASHOUT"
     } else if (gameRow == "One") {
-        document.querySelector('.towerMsgs').innerHTML = "You haven't played!"
+        qs('towerMsgs').innerHTML = "You haven't played!"
     } else {
         if (gamemode == "easy") {
             if (gameRow == "Two") {
                 addBank(amount=`${betAmount * 1.4}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 1.4}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 1.4}!`
             } else if (gameRow == "Three") {
                 addBank(amount=`${betAmount * 2}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 2}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 2}!`
             } else if (gameRow == "Four") {
                 addBank(amount=`${betAmount * 2.8}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 2.8}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 2.8}!`
             } else if (gameRow == "Five") {
                 addBank(amount=`${betAmount * 4}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 4}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 4}!`
             } else if (gameRow == "Six") {
                 addBank(amount=`${betAmount * 5.6}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 5.6}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 5.6}!`
             } else if (gameRow == "Seven") {
                 addBank(amount=`${betAmount * 8}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 8}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 8}!`
             }
             resetTowers()
         } else if (gamemode == "hard") {
             if (gameRow == "Two") {
                 addBank(amount=`${betAmount * 2.8}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 2.8}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 2.8}!`
             } else if (gameRow == "Three") {
                 addBank(amount=`${betAmount * 8.1}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 8.1}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 8.1}!`
             } else if (gameRow == "Four") {
                 addBank(amount=`${betAmount * 22.9}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 22.9}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 22.9}!`
             } else if (gameRow == "Five") {
                 addBank(amount=`${betAmount * 64.8}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 64.8}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 64.8}!`
             } else if (gameRow == "Six") {
                 addBank(amount=`${betAmount * 182.2}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 182.2}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 182.2}!`
             } else if (gameRow == "Seven") {
                 addBank(amount=`${betAmount * 510.3}`)
-                document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 510.3}!`
+                qs('towerMsgs').innerHTML = `You won $${betAmount * 510.3}!`
             }
             resetTowers()
         }
@@ -175,7 +179,7 @@ function towerButton(element=text) {
             if (gamemode == "easy") {
                 if (chosenBtn == element.target.className) {
                     element.target.style.backgroundColor = 'red'
-                    document.querySelector('.towerMsgs').innerHTML = "YOU LOST!"
+                    qs('towerMsgs').innerHTML = "YOU LOST!"
                     resetTowers()
                 } else {
                     element.target.style.backgroundColor = 'green'
@@ -193,7 +197,7 @@ function towerButton(element=text) {
                         gameRow = "Seven"
                     } else if (gameRow == "Seven") {
                         addBank(amount=`${betAmount * 11.1}`)
-                        document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 11.1}!`
+                        qs('towerMsgs').innerHTML = `You won $${betAmount * 11.1}!`
                         resetTowers()
                     }
                     if (gameRow) {
@@ -208,7 +212,7 @@ function towerButton(element=text) {
             } else if (gamemode == "hard") {
                 if (chosenBtn != element.target.className) {
                     element.target.style.backgroundColor = 'red'
-                    document.querySelector('.towerMsgs').innerHTML = "YOU LOST!"
+                    qs('towerMsgs').innerHTML = "YOU LOST!"
                     resetTowers()
                 } else {
                     element.target.style.backgroundColor = 'green'
@@ -226,7 +230,7 @@ function towerButton(element=text) {
                         gameRow = "Seven"
                     } else if (gameRow == "Seven") {
                         addBank(amount=`${betAmount * 1421.5}`)
-                        document.querySelector('.towerMsgs').innerHTML = `You won $${betAmount * 1421.5}!`
+                        qs('towerMsgs').innerHTML = `You won $${betAmount * 1421.5}!`
                     }
                     let localWhileNo = 1
                     while (localWhileNo < 4) {
@@ -240,7 +244,7 @@ function towerButton(element=text) {
             // do nothing
         }
     } else {
-        document.querySelector('.towerMsgs').innerHTML = "Start the game first!"
+        qs('towerMsgs').innerHTML = "Start the game first!"
     }
 }
 
@@ -252,7 +256,7 @@ function resetTowers() {
         btn3s[localWhileNo].style.backgroundColor = '#cacaca'
         localWhileNo += 1
     }
-    document.querySelector('.towersStartBtn').innerHTML = "Start game!"
+    qs('towersStartBtn').innerHTML = "Start game!"
     gameRow = null
     updateBank()
     input.disabled = false

@@ -25,13 +25,13 @@ function remBank(amount=text) {
 
 updateBank()
 
-const btnHome = document.querySelector('.btnHome');
-const btnTowers = document.querySelector('.btnTowers')
-const btnRoulette = document.querySelector('.btnRoulette');
-const btnMines = document.querySelector('.btnMines')
-const btnTowers2 = document.querySelector('.towersImg')
-const btnRoulette2 = document.querySelector('.rouletteImg');
-const btnMines2 = document.querySelector('.minesImg')
+const btnHome = qs('btnHome');
+const btnTowers = qs('btnTowers')
+const btnRoulette = qs('btnRoulette');
+const btnMines = qs('btnMines')
+const btnTowers2 = qs('towersImg')
+const btnRoulette2 = qs('rouletteImg');
+const btnMines2 = qs('minesImg')
 
 if (btnHome && btnTowers && btnRoulette && btnMines) {
     btnHome.addEventListener('click', goToHome);
@@ -43,10 +43,10 @@ if (btnHome && btnTowers && btnRoulette && btnMines) {
     btnMines2.addEventListener('click', goToMines);
 }
 
-const homeDiv = document.querySelector('.homeDiv');
-const towerDiv = document.querySelector('.towerDiv');
-const rouletteDiv = document.querySelector('.rouletteDiv');
-const minesDiv = document.querySelector('.minesDiv')
+const homeDiv = qs('homeDiv');
+const towerDiv = qs('towerDiv');
+const rouletteDiv = qs('rouletteDiv');
+const minesDiv = qs('minesDiv');
 
 towerDiv.style.display = "none"
 rouletteDiv.style.display = "none"
@@ -86,3 +86,5 @@ function updateBank() {
 }
 
 updateBank()
+
+// Quicker way to use querySelector (no more dots or typing long functions!)
