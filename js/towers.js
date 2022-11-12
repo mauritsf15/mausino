@@ -115,7 +115,7 @@ function startTowers() {
         hardBtn.disabled = true;
         let localWhileNo = 1;
         while (localWhileNo < 4) {
-            const localBtn = document.querySelector(`.rowOne .btn${localWhileNo}`);
+            const localBtn = qs(`rowOne .btn${localWhileNo}`);
             localBtn.style.backgroundColor = "var(--colour4)";
             localWhileNo += 1;
         }
@@ -175,7 +175,7 @@ function startTowers() {
 function towerButton(element=text) {
     if (gameRow) {
         if (`row${gameRow}` == element.target.parentElement.className) {
-            const chosenBtn = document.querySelector(`.row${gameRow} .btn${Math.floor(Math.random() * 3 + 1)}`).className;
+            const chosenBtn = qs(`row${gameRow} .btn${Math.floor(Math.random() * 3 + 1)}`).className;
             if (gamemode == "easy") {
                 if (chosenBtn == element.target.className) {
                     element.target.style.backgroundColor = 'red';
@@ -203,7 +203,7 @@ function towerButton(element=text) {
                     if (gameRow) {
                         let localWhileNo = 1;
                         while (localWhileNo < 4) {
-                            const localBtn = document.querySelector(`.row${gameRow} .btn${localWhileNo}`);
+                            const localBtn = qs(`row${gameRow} .btn${localWhileNo}`);
                             localBtn.style.backgroundColor = "var(--colour4)";
                             localWhileNo += 1;
                         }
@@ -234,7 +234,7 @@ function towerButton(element=text) {
                     }
                     let localWhileNo = 1;
                     while (localWhileNo < 4) {
-                        const localBtn = document.querySelector(`.row${gameRow} .btn${localWhileNo}`);
+                        const localBtn = qs(`row${gameRow} .btn${localWhileNo}`);
                         localBtn.style.backgroundColor = "var(--colour4)";
                         localWhileNo += 1;
                     }

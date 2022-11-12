@@ -23,7 +23,7 @@ if (rouletteStartBtn) {
 // Start button
 
 function rouletteStart() {
-    if (rouletteColor && document.querySelector(".rouletteSettings .betAmount").reportValidity()) {
+    if (rouletteColor && document.qs("rouletteSettings .betAmount").reportValidity()) {
         betAmount = parseInt(qs('rouletteSettings .betAmount').value);
         remBank(amount=`${betAmount}`);
         rouletteAlert("clear");

@@ -21,7 +21,7 @@ minesCashoutText.style.display = 'none';
 
 // Giving all the mines a click event
 for (let i = 1; i < 26; i++) {
-    mines.push(document.querySelector(`.mine-${i}`));
+    mines.push(qs(`mine-${i}`));
 }
 
 for (let i = 0; i < mines.length; i ++) {

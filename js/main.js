@@ -1,4 +1,7 @@
 let betAmount;
+const modal = qs('modal');
+const bank = qs('bank');
+const addmoney = qs('add-free')
 
 // (fake) COOKIES! nom nom
 function getBank() {
@@ -81,8 +84,20 @@ function goToMines() {
 }
 
 function updateBank() {
-    document.querySelector(".bank").innerHTML = `$${getBank()}`;
+    qs("bank").innerHTML = `$${getBank()}`;
     input.max = getBank();
 }
 
 updateBank();
+
+const modalTemplate = (text) => {
+    qs('modal').style.display = 'block';
+}
+
+const closeModal = () => {
+    qs('modal').style.display = 'none'
+}
+
+modal.addEventListener('click', closeModal)
+bank.addEventListener('click', function() {modalTemplate('mew mew')})
+addmoney.addEventListener('click', function() {addBank(100)})
