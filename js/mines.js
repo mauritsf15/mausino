@@ -45,6 +45,7 @@ function clickMine(data) {
             minesClicked.push(mine)
             if (bombs.includes(mine)) {
                 data.target.style.backgroundColor = 'red'
+                minesHint.innerHTML = 'You died and lost your money!'
                 dieMines();
             } else {
                 if (minesAmount == 3) {
